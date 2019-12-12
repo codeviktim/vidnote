@@ -1,0 +1,35 @@
+<!--navbar-->
+<div class="ui fluid six item stackable inverted menu">
+  {{#if user}}
+  <div class="ui left simple dropdown button item" tabindex="0">
+    Video Ideas
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a href="/api/ideas" class="item">Ideas</a>
+      <a href="/api/ideas/add" class="item">Add Idea</a>
+    </div>
+  </div>
+  <div class="active item">
+    <a href="/">VidNote</a>
+    <i class="ui big vimeo icon"></i>
+  </div>
+  <div class="ui right item">
+    <a href="/api/users/logout" class="ui primary button">Logout</a>
+  </div>
+  {{else}}
+  <div class="active item">
+    <a href="/">VidNote</a>
+    <i class="ui big vimeo icon"></i>
+  </div>
+  <div class="ui right item">
+    <a href="/api/users/login" class="ui primary button">Login</a>
+  </div>
+  <div class="ui item">
+    <a href="/api/users/register" class="ui olive button">Register</a>
+  </div>
+  {{/if}}
+</div>
+
+
+
+<!--end navbar-->

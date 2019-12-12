@@ -1,0 +1,23 @@
+<div class="ui stackable four column grid link cards">
+  {{#each ideas}}
+  <div class="column">
+    <div class=" ui red card">
+      <div class="content">
+        <div class="center aligned header">{{title}}</div>
+        <div class="description">{{details}}</div>
+      </div>
+      <div class="ui basic white two bottom attached buttons">
+        <button class="ui button"><a href="/api/ideas/{{id}}"><i class="folder open outline icon"></i>
+            Edit</a></button>
+        <form method="post" action="/api/ideas/{{id}}?_method=DELETE">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="ui button"><a href=""><i class="trash icon"></i>
+              Discard</a></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <h1>No video Ideas listed</h1>
+  {{/each}}
+</div>

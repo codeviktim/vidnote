@@ -1,0 +1,25 @@
+<div class="ui centered grid">
+  <div class="six wide tablet ten wide computer column">
+    <form action="/api/ideas/{{idea.id}}?_method=PUT" method="post" class="ui form segment">
+      <div class="field">
+        <h1 class="ui center aligned header"> Edit Video Idea</h1>
+        <input type="hidden" name="_method" value="PUT">
+        <label>Title</label>
+        <input type="text" name="title" value="{{idea.title}}" required>
+      </div>
+      <div class="field">
+        <label>Details</label>
+        <textarea type="text" name="details" required>
+                        {{idea.details}}
+         </textarea>
+        <div>
+          <div class="ui two buttons">
+            <button class="ui left floated secondary button">Resave</button>
+            <form method="post" action="/api/ideas/{{id}}?_method=DELETE">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="ui right floated red button">Discard</button>
+            </form>
+          </div>
+    </form>
+  </div>
+</div>
